@@ -60,7 +60,7 @@ span {
     border-radius: 4px;
     font-size: 12px;
     box-sizing: border-box;
-    border: 1px solid rgba(64,158,255,.2);
+    border: 1px solid rgba(64,158,255,.3);
 }
 i {
     margin-left: 4px;
