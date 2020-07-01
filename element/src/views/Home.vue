@@ -1,26 +1,52 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <el-tag
-      :closable="true"
-      color="rgba(64,158,255,.1)"
-      :disable-transitions="false"
-      @close="handleClose"
-    >button</el-tag>
+    <el-row :gutter="40">
+      <el-col :span="4">
+        <div class="item">Item</div>
+      </el-col>
+      <el-col :span="16">
+        <div class="item">Item</div>
+      </el-col>
+      <el-col :span="4">
+        <div class="item">Item</div>
+      </el-col>
+    </el-row>
+    <el-row :gutter="20">
+      <el-col :span="20">
+        <div class="item">Item</div>
+      </el-col>
+      <el-col :span="4">
+        <div class="item">Item</div>
+      </el-col>
+    </el-row>
+    <el-row :gutter="30">
+      <el-col :span="4">
+        <div class="item">Item</div>
+      </el-col>
+      <el-col :span="4" :offset="8">
+        <div class="item">Item</div>
+      </el-col>
+      <el-col :span="4">
+        <div class="item">Item</div>
+      </el-col>
+      <el-col :span="4">
+        <div class="item">Item</div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-import ElTag from '@/components/tag'
 
 export default {
   name: 'Home',
+  data() {
+    return {
+    }
+  },
   components: {
-    // HelloWorld,
-    ElTag
   },
   methods: {
     handleClose(e) {
@@ -29,3 +55,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.item {
+  height: 36px;
+  line-height: 36px;
+  background: cadetblue;
+  border-radius: 4px;
+  text-align: center;
+}
+</style>
