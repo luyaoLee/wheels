@@ -1,0 +1,100 @@
+[class*=el-col-] {
+  box-sizing: border-box;
+  float: left;
+}
+
+[class*=el-col-push-],
+[class*=el-col-pull-] {
+  position: relative;
+}
+
+@for $i from 0 through 24 {
+  $percent: $i / 24 * 100%;
+  .el-col-#{$i} {
+    width: $percent;
+    @if $i == 0 {
+      display: none;
+    }
+  }
+
+  .el-col-offset-#{$i} {
+    margin-left: $percent;
+    @if $i == 0 {
+      display: none;
+    }
+  }
+
+  .el-col-push-#{$i} {
+    left: $percent;
+    @if $i == 0 {
+      display: none;
+    }
+  }
+
+  .el-col-pull-#{$i} {
+    right: $percent;
+    @if $i == 0 {
+      display: none;
+    }
+  }
+}
+
+// xs
+@media only screen and (max-width: 767px) {
+  @for $i from 0 through 24 {
+    .el-col-xs-#{$i} {
+      width: $i / 24 * 100%;
+      @if $i == 0 {
+        display: none;
+      }
+    }
+  }
+}
+
+// sm
+@media only screen and (min-width: 768px) {
+  @for $i from 0 through 24 {
+    .el-col-sm-#{$i} {
+      width: $i / 24 * 100%;
+      @if $i == 0 {
+        display: none;
+      }
+    }
+  }
+}
+
+// md
+@media only screen and (min-width: 992px) {
+  @for $i from 0 through 24 {
+    .el-col-md-#{$i} {
+      width: $i / 24 * 100%;
+      @if $i == 0 {
+        display: none;
+      }
+    }
+  }
+}
+
+// lg
+@media only screen and (min-width: 1200px) {
+  @for $i from 0 through 24 {
+    .el-col-lg-#{$i} {
+      width: $i / 24 * 100%;
+      @if $i == 0 {
+        display: none;
+      }
+    }
+  }
+}
+
+// xl
+@media only screen and (min-width: 1920px) {
+  @for $i from 0 through 24 {
+    .el-col-xl-#{$i} {
+      width: $i / 24 * 100%;
+      @if $i == 0 {
+        display: none;
+      }
+    }
+  }
+}

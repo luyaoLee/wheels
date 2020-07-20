@@ -1,0 +1,25 @@
+.el-row {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+.el-row-flex {
+  display: flex;
+
+  @each $val in start, end, center, space-around, space-between {
+    &.is-justify-#{$val} {
+      justify-content: $val;
+    }
+  }
+  
+  @each $val in top, middle, bottom {
+    &.is-align-#{$val} {
+      align-items: $val;
+    }
+  }
+}

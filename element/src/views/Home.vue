@@ -2,10 +2,10 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <el-row :gutter="40">
-      <el-col :span="4">
+      <el-col :span="4" :xs="8" :sm="0" :md="4" :lg="3" :xl="1">
         <div class="item">Item</div>
       </el-col>
-      <el-col :span="16">
+      <el-col :span="4">
         <div class="item">Item</div>
       </el-col>
       <el-col :span="4">
@@ -20,17 +20,17 @@
         <div class="item">Item</div>
       </el-col>
     </el-row>
-    <el-row :gutter="30">
+    <el-row :gutter="30" type="flex">
       <el-col :span="4">
         <div class="item">Item</div>
       </el-col>
-      <el-col :span="4" :offset="8">
+      <el-col :span="4" :offset="4">
         <div class="item">Item</div>
       </el-col>
       <el-col :span="4">
         <div class="item">Item</div>
       </el-col>
-      <el-col :span="4">
+      <el-col :span="4" :push="1">
         <div class="item">Item</div>
       </el-col>
     </el-row>
