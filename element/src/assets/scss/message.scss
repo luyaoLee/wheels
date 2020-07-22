@@ -1,0 +1,40 @@
+.el-message {
+  min-width: 360px;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.el-message-success {
+  background-color: $successBgColor;
+  color: $success;
+}
+
+.el-message-info {
+  background-color: $infoBgColor;
+  color: $info;
+}
+
+.el-message-warning {
+  background-color: $waringBgColor;
+  color: $waring;
+}
+
+.el-message-error {
+  background-color: $errorBgcolor;
+  color: $error;
+}
+
+.el-message-fade-enter-active, .el-message-fade-leave-active {
+  transition: opacity .5s, transform 1s;
+}
+.el-message-fade-enter, .el-message-fade-leave-to {
+  opacity: 0;
+  transform: translate3d(-50%, -40px, 0);
+}

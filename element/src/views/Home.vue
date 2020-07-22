@@ -1,10 +1,8 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <el-alert title="sd" @close="handleClose"></el-alert>
-    <el-alert title="sd1" type="success" close-text="I konw" :closable="false"></el-alert>
-    <el-alert title="sd2" type="warning"></el-alert>
-    <el-alert title="sd3" type="error"></el-alert>
+    <button @click="open">Add</button>
+    <button @click="open1">Add1</button>
   </div>
 </template>
 
@@ -20,9 +18,23 @@ export default {
   },
   components: {
   },
+  mounted() {
+  },
   methods: {
     handleClose(e) {
       console.log(1, e)
+    },
+    open() {
+      this.$message({
+        message: 'hello world',
+        type: 'success'
+      })
+    },
+    open1() {
+      this.$message({
+        message: 'hello world',
+        type: 'error'
+      })
     }
   }
 }

@@ -6,23 +6,23 @@
 }
 
 .el-alert-success {
-  background-color: #f0f9eb;
-  color: #67c23a;
+  background-color: $successBgColor;
+  color: $success;
 }
 
 .el-alert-info {
-  background-color: #f4f4f5;
-  color: #909399;
+  background-color: $infoBgColor;
+  color: $info;
 }
 
 .el-alert-warning {
-  background-color: #fdf6ec;
-  color: #e6a23c;
+  background-color: $waringBgColor;
+  color: $waring;
 }
 
 .el-alert-error {
-  background-color: #fef0f0;
-  color: #f56c6c;
+  background-color: $errorBgcolor;
+  color: $error;
 }
 
 .el-alert-fade-enter-active, .el-alert-fade-leave-active {

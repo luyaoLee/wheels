@@ -5,12 +5,14 @@ import ElRow from './components/row'
 import ElCol from './components/col'
 import ElRadio from './components/radio'
 import ElAlert from './components/alert'
+import ElMessage from './components/message'
 
 Vue.config.productionTip = false
 Vue.use(ElRow)
 Vue.use(ElCol)
 Vue.use(ElRadio)
 Vue.use(ElAlert)
+Vue.prototype.$message = ElMessage
 
 import './assets/scss/index.scss'
 
