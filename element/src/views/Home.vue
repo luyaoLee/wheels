@@ -1,39 +1,10 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <el-row :gutter="40">
-      <el-col :span="4" :xs="8" :sm="0" :md="4" :lg="3" :xl="1">
-        <div class="item">Item</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="item">Item</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="item">Item</div>
-      </el-col>
-    </el-row>
-    <el-row :gutter="20">
-      <el-col :span="20">
-        <div class="item">Item</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="item">Item</div>
-      </el-col>
-    </el-row>
-    <el-row :gutter="30" type="flex">
-      <el-col :span="4">
-        <div class="item">Item</div>
-      </el-col>
-      <el-col :span="4" :offset="4">
-        <div class="item">Item</div>
-      </el-col>
-      <el-col :span="4">
-        <div class="item">Item</div>
-      </el-col>
-      <el-col :span="4" :push="1">
-        <div class="item">Item</div>
-      </el-col>
-    </el-row>
+    <el-alert title="sd" @close="handleClose"></el-alert>
+    <el-alert title="sd1" type="success" close-text="I konw" :closable="false"></el-alert>
+    <el-alert title="sd2" type="warning"></el-alert>
+    <el-alert title="sd3" type="error"></el-alert>
   </div>
 </template>
 
@@ -44,13 +15,14 @@ export default {
   name: 'Home',
   data() {
     return {
+      test: 0
     }
   },
   components: {
   },
   methods: {
     handleClose(e) {
-      console.log(e)
+      console.log(1, e)
     }
   }
 }

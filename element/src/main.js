@@ -3,10 +3,14 @@ import App from './App.vue'
 import router from './router'
 import ElRow from './components/row'
 import ElCol from './components/col'
+import ElRadio from './components/radio'
+import ElAlert from './components/alert'
 
 Vue.config.productionTip = false
 Vue.use(ElRow)
 Vue.use(ElCol)
+Vue.use(ElRadio)
+Vue.use(ElAlert)
 
 import './assets/scss/index.scss'
 
