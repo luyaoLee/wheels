@@ -1,8 +1,14 @@
 <template>
   <transition name="el-message-fade" @after-leave="afterLeave">
-    <div :class="classList" :style="styleObj" v-show="visible">
+    <div
+      :class="classList"
+      :style="styleObj"
+      @mouseenter="clearTimer"
+      @mouseleave="startTimer"
+      v-show="visible">
+
       <span>{{message}}</span>
-      <i v-if="showClose" @click="close">x</i>
+      <i v-if="showClose" @click="close" class="close">x</i>
     </div>
   </transition>
 </template>
@@ -53,7 +59,9 @@ export default {
       }
     },
     clearTimer() {
-      this.timer && clearTimeout(this.timer)
+      if (this.duration > 0) {
+        this.timer && clearTimeout(this.timer)
+      }
     },
     afterLeave() {
       this.$destroy(true)
@@ -61,7 +69,7 @@ export default {
     }
   },
   mounted() {
-    // this.startTimer()
+    this.startTimer()
   }
 }
 </script>

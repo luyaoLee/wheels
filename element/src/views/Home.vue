@@ -1,8 +1,10 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <button @click="open">Add</button>
-    <button @click="open1">Add1</button>
+    <div style="text-align: right;">
+      <button @click="open">Add</button>
+      <button @click="open1">Add1</button>
+    </div>
   </div>
 </template>
 
@@ -25,10 +27,7 @@ export default {
       console.log(1, e)
     },
     open() {
-      this.$message({
-        message: 'hello world',
-        type: 'success'
-      })
+      this.$message('hello')
     },
     open1() {
       this.$message({
