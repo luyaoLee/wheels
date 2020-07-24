@@ -5,11 +5,13 @@
       <button @click="open">Add</button>
       <button @click="open1">Add1</button>
     </div>
+    <message-box></message-box>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import messageBox from '../components/message-box/src/message-box.vue'
 
 export default {
   name: 'Home',
@@ -19,6 +21,7 @@ export default {
     }
   },
   components: {
+    messageBox
   },
   mounted() {
   },

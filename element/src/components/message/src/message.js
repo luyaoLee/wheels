@@ -18,7 +18,7 @@ const Message = function(options = {}) {
   let userOnclose = options.onClose
   let id = 'message_' + seed++
 
-
+  // 重定义onClose
   options.onClose = function() {
     Message.close(id, userOnclose)
   }
@@ -61,11 +61,10 @@ Message.close = function(id, userOnclose) {
   }
   
   if (len <= 1 || index === -1 || index > instances.length - 1) return;
-  for (let i = index; i < len - 1 ; i++) {
+  for (let i = index; i < len - 1; i++) {
     let dom = instances[i].$el;
     dom.style['top'] = parseInt(dom.style['top'], 10) - removedHeight - 16 + 'px';
   }
-
 }
 
 export default Message

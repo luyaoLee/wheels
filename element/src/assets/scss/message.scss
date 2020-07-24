@@ -9,7 +9,7 @@
   left: 50%;
   top: 20px;
   transform: translate3d(-50%, 0, 0);
-  transition: opacity .3s, transform .4s, top .4s;
+  transition: top .32s;
 
   .close {
     cursor: pointer;
@@ -37,7 +37,7 @@
 }
 
 .el-message-fade-enter-active, .el-message-fade-leave-active {
-  transition: opacity .3s, transform 1s;
+  transition: opacity .3s, transform 0.3s;
 }
 .el-message-fade-enter, .el-message-fade-leave-to {
   opacity: 0;
