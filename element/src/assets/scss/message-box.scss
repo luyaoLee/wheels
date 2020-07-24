@@ -61,3 +61,42 @@
   background: #000;
   z-index: 2000;
 }
+
+// 如果有多个元素需要动效，那么需要用animation，而不是transition
+.msgbox-fade-enter-active {
+	-webkit-animation: msgbox-fade-in .3s;
+	animation: msgbox-fade-in .3s
+}
+
+.msgbox-fade-leave-active {
+	-webkit-animation: msgbox-fade-out .3s;
+	animation: msgbox-fade-out .3s
+}
+
+@keyframes msgbox-fade-in {
+	0% {
+		-webkit-transform: translate3d(0,-20px,0);
+		transform: translate3d(0,-20px,0);
+		opacity: 0
+	}
+
+	100% {
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		opacity: 1
+	}
+}
+
+@keyframes msgbox-fade-out {
+	0% {
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		opacity: 1
+	}
+
+	100% {
+		-webkit-transform: translate3d(0,-20px,0);
+		transform: translate3d(0,-20px,0);
+		opacity: 0
+	}
+}
