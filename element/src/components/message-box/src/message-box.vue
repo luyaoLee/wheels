@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="el-message-box-wrapper">
+  <transition name="msgbox-fade">
+    <div class="el-message-box-wrapper" v-show="visible">
       <div class="el-message-box">
         <div class="el-message-header">
           <div class="title">
@@ -18,8 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="v-model"></div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -29,6 +28,7 @@ export default {
     return {
       title: 'hello world',
       message: '',
+      visible: false,
       callback: null,
       showClose: true,
       beforeClose: null,
