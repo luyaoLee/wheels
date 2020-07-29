@@ -1,19 +1,34 @@
 <template>
-  <transition>
-    <div class="title">
-      <span>{{title}}</span>
-      <slot name="title"></slot>
-    </div>
-    <div class="content"></div>
-    <div class="footer">
-      <slot name="footer"></slot>
+  <transition name="dialog-fade">
+    <!-- click.self 防止由内部冒泡触发click -->
+    <div
+      class="el-dialog-wrapper"
+      @click.self="handleWrapperClick"
+      v-show="visible">
+      <div class="el-dialog" :style="style">
+        <div class="el-dialog-header">
+          <slot name="title">
+            <span class="el-dialog-title">{{title}}</span>
+          </slot>
+          <i class="close iconfont icon-close" @click="handleClose" v-if="showClose"></i>
+        </div>
+        <div class="el-dialog-body">
+          <slot></slot>
+        </div>
+        <div class="el-dialog-footer" v-if="$slots.footer">
+          <slot name="footer"></slot>
+        </div>
+      </div>
     </div>
   </transition>
 </template>
 
 <script>
+import popup from '@/utils/popup'
+
 export default {
   name: 'ElDialog',
+  mixins: [popup],
   props: {
     title: String,
     width: {
@@ -65,6 +80,27 @@ export default {
     destroyOnClose: {
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    handleClose() {
+      this.$emit('update:visible', false)
+    },
+    handleWrapperClick() {
+      if (!this.closeOnClickModal) return
+      this.handleClose()
+    }
+  },
+  computed: {
+    style() {
+      const style = {}
+      if (this.top) {
+        style.top = this.top
+      }
+      if (this.width) {
+        style.width = this.width
+      }
+      return style
     }
   }
 }

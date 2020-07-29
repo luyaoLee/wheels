@@ -2,26 +2,32 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <div style="text-align: right;">
-      <button @click="open">Add</button>
-      <button @click="open1">Add1</button>
+      <el-button @click="open">Add</el-button>
+      <el-button @click="open1">Add1</el-button>
     </div>
-    <message-box></message-box>
+    <el-dialog
+      title="提示"
+      :visible.sync="visible"
+      >
+      <span>这是一段信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="visible = false">取 消</el-button>
+        <el-button  @click="visible = false" type="primary">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import messageBox from '../components/message-box/src/message-box.vue'
 
 export default {
   name: 'Home',
   data() {
     return {
-      test: 0
+      test: 0,
+      visible: false
     }
-  },
-  components: {
-    messageBox
   },
   mounted() {
   },
@@ -30,7 +36,8 @@ export default {
       console.log(1, e)
     },
     open() {
-      this.$message('hello')
+      // this.$message('hello')
+      this.visible = !this.visible
     },
     open1() {
       this.$message({

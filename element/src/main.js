@@ -6,12 +6,16 @@ import ElCol from './components/col'
 import ElRadio from './components/radio'
 import ElAlert from './components/alert'
 import ElMessage from './components/message'
+import ElDialog from './components/dialog'
+import ElButton from './components/button'
 
 Vue.config.productionTip = false
 Vue.use(ElRow)
 Vue.use(ElCol)
 Vue.use(ElRadio)
 Vue.use(ElAlert)
+Vue.use(ElDialog)
+Vue.use(ElButton)
 Vue.prototype.$message = ElMessage
 
 import './assets/scss/index.scss'
