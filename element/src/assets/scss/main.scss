@@ -1,0 +1,9 @@
+.el-fade-in-enter,
+.el-fade-in-leave-to {
+  opacity: 0;
+}
+
+.el-fade-in-enter-active,
+.el-fade-in-leave-active {
+  transition: opacity .3s;
+}

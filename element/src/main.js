@@ -8,6 +8,7 @@ import ElAlert from './components/alert'
 import ElMessage from './components/message'
 import ElDialog from './components/dialog'
 import ElButton from './components/button'
+import ElBackToTop from './components/back-to-top'
 
 Vue.config.productionTip = false
 Vue.use(ElRow)
@@ -16,6 +17,7 @@ Vue.use(ElRadio)
 Vue.use(ElAlert)
 Vue.use(ElDialog)
 Vue.use(ElButton)
+Vue.use(ElBackToTop)
 Vue.prototype.$message = ElMessage
 
 import './assets/scss/index.scss'

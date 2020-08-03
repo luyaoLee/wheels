@@ -15,6 +15,9 @@
         <el-button  @click="visible = false" type="primary">确 定</el-button>
       </span>
     </el-dialog>
+    <div style="height: 200vh"></div>
+
+    <el-backtop></el-backtop>
   </div>
 </template>
 
@@ -30,8 +33,27 @@ export default {
     }
   },
   mounted() {
+    this.a()
   },
   methods: {
+    async a() {
+      await this.b()
+      console.log(111)
+    },
+    async b() {
+      console.log('hello')
+      await this.c()
+    },
+    async c() {
+      await this.d()
+    },
+    d() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve()
+        }, 3000)
+      })
+    },
     handleClose(e) {
       console.log(1, e)
     },
