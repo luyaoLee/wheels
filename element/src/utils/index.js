@@ -5,7 +5,7 @@ export function throttle(fn, wait) {
     canRun = false
     let timer = setTimeout(() => {
       canRun = true
-      fn.call(this, arguments)
+      fn.call(this, ...arguments)
       clearTimeout(timer)
     }, wait)
   }

@@ -9,8 +9,10 @@ import ElMessage from './components/message'
 import ElDialog from './components/dialog'
 import ElButton from './components/button'
 import ElBackToTop from './components/back-to-top'
+import ElInfiniteScroll from './components/infinite-scroll'
 
 Vue.config.productionTip = false
+
 Vue.use(ElRow)
 Vue.use(ElCol)
 Vue.use(ElRadio)
@@ -18,6 +20,8 @@ Vue.use(ElAlert)
 Vue.use(ElDialog)
 Vue.use(ElButton)
 Vue.use(ElBackToTop)
+Vue.use(ElInfiniteScroll)
+
 Vue.prototype.$message = ElMessage
 
 import './assets/scss/index.scss'

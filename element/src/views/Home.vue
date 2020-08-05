@@ -5,19 +5,9 @@
       <el-button @click="open">Add</el-button>
       <el-button @click="open1">Add1</el-button>
     </div>
-    <el-dialog
-      title="提示"
-      :visible.sync="visible"
-      >
-      <span>这是一段信息</span>
-      <span slot="footer" class="dialog-footer">
-        <el-button @click="visible = false">取 消</el-button>
-        <el-button  @click="visible = false" type="primary">确 定</el-button>
-      </span>
-    </el-dialog>
-    <div style="height: 200vh"></div>
-
-    <el-backtop></el-backtop>
+    <ul class="target" v-infinite-scroll="onScroll">
+      <li v-for="(item, index) in count" :key="index">{{item}}</li>
+    </ul>
   </div>
 </template>
 
@@ -29,30 +19,16 @@ export default {
   data() {
     return {
       test: 0,
-      visible: false
+      visible: false,
+      distance: 40,
+      count: 5
     }
   },
   mounted() {
-    this.a()
   },
   methods: {
-    async a() {
-      await this.b()
-      console.log(111)
-    },
-    async b() {
-      console.log('hello')
-      await this.c()
-    },
-    async c() {
-      await this.d()
-    },
-    d() {
-      return new Promise(resolve => {
-        setTimeout(() => {
-          resolve()
-        }, 3000)
-      })
+    onScroll() {
+      this.count += 2
     },
     handleClose(e) {
       console.log(1, e)
@@ -60,6 +36,7 @@ export default {
     open() {
       // this.$message('hello')
       this.visible = !this.visible
+      console.log(this.$refs.target.offsetWidth)
     },
     open1() {
       this.$message({
@@ -78,5 +55,16 @@ export default {
   background: cadetblue;
   border-radius: 4px;
   text-align: center;
+}
+.target {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  border: 2px solid orangered;
+  margin: 10px;
+  overflow: auto;
+  li {
+    height: 40px;
+  }
 }
 </style>
