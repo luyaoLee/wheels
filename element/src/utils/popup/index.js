@@ -6,11 +6,13 @@ export default {
     }
   },
   watch: {
-    visible(val) {
-      if (val) {
-        this.open()
-      } else {
-        this.close()
+    visible: {
+      handler(val) {
+        if (val) {
+          this.open()
+        } else {
+          this.close()
+        }
       }
     }
   },

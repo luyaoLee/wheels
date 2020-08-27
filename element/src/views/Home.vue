@@ -1,13 +1,14 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <div style="text-align: right;">
-      <el-button @click="open">Add</el-button>
-      <el-button @click="open1">Add1</el-button>
-    </div>
-    <ul class="target" v-infinite-scroll="onScroll">
-      <li v-for="(item, index) in count" :key="index">{{item}}</li>
-    </ul>
+    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+    <el-image
+      :src="'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'"
+      :fit="fits[0]"
+      style="width: 100px; height: 100px"
+      :preview-src-list="srcList"
+      :visible="visible"
+      @click="visible = true"
+    ></el-image>
   </div>
 </template>
 
@@ -18,31 +19,19 @@ export default {
   name: 'Home',
   data() {
     return {
-      test: 0,
-      visible: false,
-      distance: 40,
-      count: 5
+      fits: ['fill', 'contain', 'cover', 'none', 'scale-down'],
+      srcList: [
+        'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg',
+        'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg'
+      ],
+      visible:false
     }
   },
   mounted() {
   },
   methods: {
-    onScroll() {
-      this.count += 2
-    },
-    handleClose(e) {
-      console.log(1, e)
-    },
-    open() {
-      // this.$message('hello')
-      this.visible = !this.visible
-      console.log(this.$refs.target.offsetWidth)
-    },
-    open1() {
-      this.$message({
-        message: 'hello world',
-        type: 'error'
-      })
+    test(val) {
+      console.log(val)
     }
   }
 }
@@ -55,16 +44,5 @@ export default {
   background: cadetblue;
   border-radius: 4px;
   text-align: center;
-}
-.target {
-  width: 100px;
-  height: 100px;
-  padding: 10px;
-  border: 2px solid orangered;
-  margin: 10px;
-  overflow: auto;
-  li {
-    height: 40px;
-  }
 }
 </style>

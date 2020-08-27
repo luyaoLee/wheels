@@ -10,6 +10,7 @@ import ElDialog from './components/dialog'
 import ElButton from './components/button'
 import ElBackToTop from './components/back-to-top'
 import ElInfiniteScroll from './components/infinite-scroll'
+import ElImage from './components/image'
 
 Vue.config.productionTip = false
 
@@ -21,6 +22,7 @@ Vue.use(ElDialog)
 Vue.use(ElButton)
 Vue.use(ElBackToTop)
 Vue.use(ElInfiniteScroll)
+Vue.use(ElImage)
 
 Vue.prototype.$message = ElMessage
 
