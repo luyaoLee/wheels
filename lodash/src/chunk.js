@@ -17,9 +17,9 @@
  */
 function chunk(array, size = 1) {
   const result = []
-  const groupNum = Math.ceil(arr.length / size)
+  const groupNum = Math.ceil(array.length / size)
   for(let i = 0; i < groupNum; i++) {
-    const group = arr.slice(i*size, (i+1)*size)
+    const group = array.slice(i*size, (i+1)*size)
     result.push(group)
   }
   return result
