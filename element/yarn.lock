@@ -6668,9 +6668,9 @@ qs@6.7.0:
   integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.npm.taobao.org/qs/download/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha1-yzroBuh0BERYTvFUzo7pjUA/PjY=
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 query-string@^4.1.0:
   version "4.3.4"
@@ -7856,11 +7856,6 @@ thread-loader@^2.1.3:
     loader-runner "^2.3.1"
     loader-utils "^1.1.0"
     neo-async "^2.6.0"
-
-throttle-debounce@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.npm.taobao.org/throttle-debounce/download/throttle-debounce-2.2.1.tgz#fbd933ae6793448816f7d5b3cae259d464c98137"
-  integrity sha1-+9kzrmeTRIgW99WzyuJZ1GTJgTc=
 
 through2@^2.0.0:
   version "2.0.5"
